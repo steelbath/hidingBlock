@@ -1,0 +1,88 @@
+.blockExtenstionContainer {
+  position: absolute;
+  background-color: black;
+
+  width: 200px;
+  height: 200px;
+  top: 300px;
+  left: 800px;
+
+  /* border: 1px grey; */
+  cursor: all-scroll;
+
+  --corner-diameter: 10px;
+  --side-diameter: 6px;
+  z-index: 9999999;
+}
+
+.grabElement {
+  position: absolute;
+  /*  background-color: rgba(0,0,0,0);*/
+  background-color: orange;
+  opacity: 0%;
+}
+
+.dragNW {
+  top: calc(var(--corner-diameter) / -2);
+  left: calc(var(--corner-diameter) / -2);
+  width: var(--corner-diameter);
+  height: var(--corner-diameter);
+  cursor: nwse-resize;
+  z-index: 2;
+}
+.dragNE {
+  top: calc(var(--corner-diameter) / -2);
+  left: calc(100% - var(--corner-diameter) / 2);
+  width: var(--corner-diameter);
+  height: var(--corner-diameter);
+  cursor: nesw-resize;
+  z-index: 2;
+}
+.dragSW {
+  top: calc(100% - var(--corner-diameter) / 2);
+  left: calc(var(--corner-diameter) / -2);
+  width: var(--corner-diameter);
+  height: var(--corner-diameter);
+  cursor: nesw-resize;
+  z-index: 2;
+}
+.dragSE {
+  top: calc(100% - var(--corner-diameter) / 2);
+  left: calc(100% - var(--corner-diameter) / 2);
+  width: var(--corner-diameter);
+  height: var(--corner-diameter);
+  cursor: nwse-resize;
+  z-index: 2;
+}
+.dragN {
+  width: 100%;
+  height: var(--side-diameter);
+  top: calc(var(--side-diameter) / -2);
+  left: 0;
+  cursor: ns-resize;
+  z-index: 1;
+}
+.dragW {
+  width: var(--side-diameter);
+  height: 100%;
+  top: 0;
+  left: calc(var(--side-diameter) / -2);
+  cursor: ew-resize;
+  z-index: 1;
+}
+.dragE {
+  width: var(--side-diameter);
+  height: 100%;
+  top: 0;
+  right: calc(var(--side-diameter) / -2);
+  cursor: ew-resize;
+  z-index: 1;
+}
+.dragS {
+  width: 100%;
+  height: var(--side-diameter);
+  bottom: calc(var(--side-diameter) / -2);
+  left: 0;
+  cursor: ns-resize;
+  z-index: 1;
+}

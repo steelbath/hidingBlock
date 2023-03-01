@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Block screen",
+  "version": "1.0",
+
+  "description": "hide page area",
+  "icons": {
+    "16": "Images/16.png"
+  },
+
+  "action": {
+    "default_icon": "Images/16.png",
+    "default_title": "hideblock"
+  },
+
+  "permissions": ["activeTab", "tabs"],
+
+  "background": {
+    "scripts": ["clickhandler.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["blackboxStyle.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
